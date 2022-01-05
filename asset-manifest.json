@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/test/static/css/main.4eb6e874.chunk.css",
+    "main.js": "/test/static/js/main.3a4bc06f.chunk.js",
+    "main.js.map": "/test/static/js/main.3a4bc06f.chunk.js.map",
+    "runtime-main.js": "/test/static/js/runtime-main.ed2f5454.js",
+    "runtime-main.js.map": "/test/static/js/runtime-main.ed2f5454.js.map",
+    "static/css/2.80e99203.chunk.css": "/test/static/css/2.80e99203.chunk.css",
+    "static/js/2.7569dada.chunk.js": "/test/static/js/2.7569dada.chunk.js",
+    "static/js/2.7569dada.chunk.js.map": "/test/static/js/2.7569dada.chunk.js.map",
+    "index.html": "/test/index.html",
+    "static/css/2.80e99203.chunk.css.map": "/test/static/css/2.80e99203.chunk.css.map",
+    "static/css/main.4eb6e874.chunk.css.map": "/test/static/css/main.4eb6e874.chunk.css.map",
+    "static/js/2.7569dada.chunk.js.LICENSE.txt": "/test/static/js/2.7569dada.chunk.js.LICENSE.txt",
+    "static/media/angular.jpg": "/test/static/media/angular.b5045666.jpg",
+    "static/media/bootstrap.jpg": "/test/static/media/bootstrap.bd712487.jpg",
+    "static/media/bro.svg": "/test/static/media/bro.fb6d17d7.svg",
+    "static/media/documentation.png": "/test/static/media/documentation.014ebef5.png",
+    "static/media/all.min.css": "/test/static/media/fa-solid-900.efbd5d20.eot",
+    "static/media/github.svg": "/test/static/media/github.6c955556.svg",
+    "static/media/google.svg": "/test/static/media/google.eae9aa93.svg",
+    "static/media/pattern_react.png": "/test/static/media/pattern_react.01996482.png",
+    "static/media/react.jpg": "/test/static/media/react.0e8c9066.jpg",
+    "static/media/register_bg_2.png": "/test/static/media/register_bg_2.4f2cb0ac.png",
+    "static/media/sketch.jpg": "/test/static/media/sketch.a6af780a.jpg",
+    "static/media/team-1-800x800.jpg": "/test/static/media/team-1-800x800.fa5a7ac2.jpg",
+    "static/media/team-2-800x800.jpg": "/test/static/media/team-2-800x800.3e08ef14.jpg",
+    "static/media/team-3-800x800.jpg": "/test/static/media/team-3-800x800.19201574.jpg",
+    "static/media/team-4-470x470.png": "/test/static/media/team-4-470x470.4ef82ef4.png",
+    "static/media/vue.jpg": "/test/static/media/vue.43bd93a8.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ed2f5454.js",
+    "static/css/2.80e99203.chunk.css",
+    "static/js/2.7569dada.chunk.js",
+    "static/css/main.4eb6e874.chunk.css",
+    "static/js/main.3a4bc06f.chunk.js"
+  ]
+}

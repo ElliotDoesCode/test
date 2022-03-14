@@ -1,7 +1,8 @@
 {
-  "name": "tailwind-css",
+  "name": "elliotsdashboard",
   "version": "5.0.0",
-  "private": true,
+  "private": false,
+  "repository": "https://github.com/ElliotDoesCode/test",
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",

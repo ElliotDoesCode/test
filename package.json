@@ -25,9 +25,11 @@
     "react": "latest",
     "react-chartjs-2": "^4.0.1",
     "react-dom": "latest",
+    "react-linkify": "^1.0.0-alpha",
     "react-scripts": "latest",
     "tailwindcss": "latest",
     "typescript": "latest",
+    "urlify": "^0.3.6",
     "web-vitals": "latest"
   },
   "scripts": {

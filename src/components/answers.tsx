@@ -1,4 +1,5 @@
 import React from "react";
+import Linkify from 'react-linkify';
 
 export default function answers({homework, baseurl, username}) {
     const [enabled, setenabled] = React.useState(false);
@@ -29,6 +30,19 @@ export default function answers({homework, baseurl, username}) {
         settitle(homework[post].title)
         setcontent(wordInString(homework[post].description, ["bitch"], 'dionne'))
     }
+
+    function replaceURLs(message) {
+        if(!message) return;
+       
+        var urlRegex = /(((https?:\/\/)|(www\.))[^\s]+)/g;
+        return message.replace(urlRegex, function (url) {
+          var hyperlink = url;
+          if (!hyperlink.match('^https?:\/\/')) {
+            hyperlink = 'http://' + hyperlink;
+          }
+          return <a href={hyperlink} target="_blank" rel="noopener noreferrer">{url}</a>
+        });
+      }
 
     return (
         <div className="p-4 max-w-sm bg-darker rounded-lg shadow-md">
@@ -83,7 +97,7 @@ export default function answers({homework, baseurl, username}) {
                                 <button type="submit" onClick={(e) => {
                                     e.preventDefault(); 
                                     setloading(true);
-                                    fetch(baseurl+"/newpost/"+username+"/"+submittitle+"/"+submitcontent+"/"+submitsubject, {method: "POST"})
+                                    fetch(baseurl+"/newpost/"+username+"/"+ encodeURIComponent(submittitle) +"/"+ encodeURIComponent(submitcontent) +"/"+submitsubject, {method: "POST"})
                                         .then(res => {setloading(false); setpostbutton("Success!"); setTimeout(() => {location.reload();}, 2000)});
                                 }} className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{postbutton}</button>
                                 }
@@ -127,8 +141,9 @@ export default function answers({homework, baseurl, username}) {
                                     </div>
                                     <div className="p-6 space-y-6">
                                         <p className="text-base leading-relaxed text-gray-400" style={{"whiteSpace": "pre-line"}}>
-                                            {content}
+                                            <Linkify className="hover:bg-gray-200" properties={{ target: '_blank', style: { color: 'blue' } }}>{content}</Linkify>
                                         </p>
+                                            {/* {replaceURLs(content)} */}
                                         {/* <p className="text-base leading-relaxed text-gray-400">
                                             The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
                                         </p> */}

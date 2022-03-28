@@ -20,6 +20,19 @@ import { collection, getFirestore, onSnapshot, doc, query, DocumentData } from "
 import Signin from './components/signin';
 import { GoogleAuthProvider, signInWithRedirect } from 'firebase/auth';
 
+import Cursor from 'react-cursor-follow'
+
+const colors = [
+  "#ff0000",
+  "#ffa500",
+  "#ffff00",
+  "#008000",
+  "#0000ff",
+  "#4b0082",
+  "#ee82ee"
+];
+
+
 export default function App() {
   const [average, setaverage] = React.useState(0);
   const [leaderlist, setleaderlist] = React.useState([]);
@@ -32,9 +45,20 @@ export default function App() {
   const db = getFirestore();
   const provider = new GoogleAuthProvider()
 
-  // const baseurl = "http://localhost:8081"
-  const baseurl = "https://powerschoolapi.herokuapp.com"
+  const [i, setI] = React.useState(0); //aasdasd
+
+  const [movies, setmovies] = React.useState([]);
+
+  const baseurl = "http://localhost:8081"
+  // const baseurl = "https://powerschoolapi.herokuapp.com"
   
+  React.useLayoutEffect(() => { //asdasda
+    setTimeout(() => {
+      if (i === colors.length) setI(0);
+      else setI(i + 1);
+    }, 1000);
+  }, [i]);
+
   const [username, setusername] = React.useState('null'); // testing
   React.useEffect(():any => {
       authentication.onAuthStateChanged(user => {
@@ -50,6 +74,11 @@ export default function App() {
           fetch(`${baseurl}/getposts`)
             .then(res => res.json())
             .then(data => {sethomework(data); console.log(data.length)})
+            .catch(err => console.log(err));
+
+          fetch(`${baseurl}/getmovies`)
+            .then(res => res.json())
+            .then(data => {setmovies(data); console.log("Movies",data.length)})
             .catch(err => console.log(err));
 
 
@@ -83,6 +112,8 @@ export default function App() {
   return (
     <>
     <div className="flex flex-wrap bg-gray-100 w-full h-screen bg-darker">
+      {/* <Cursor/> */}
+      <Cursor hollow color={colors[i]} duration={0.8} size={45} />
       <div className="w-2/12 bg-gradient-to-r from-lightdark via-lightdark to-lightest">
         <Sidebar user={username}/>
       </div>
@@ -98,7 +129,7 @@ export default function App() {
                 </div>
                 {/* Statistics */}
                 <Statcards average={average} leaderlist={leaderlist} classaverage={classaverage} />
-                <Row1 username={username} leaderlist={leaderlist} homework={homework} baseurl={baseurl} />
+                <Row1 username={username} leaderlist={leaderlist} homework={homework} baseurl={baseurl} movies={movies} />
 
                 <div className='px-4 mx-auto my-8'>
                 </div>

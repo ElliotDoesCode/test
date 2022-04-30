@@ -134,56 +134,14 @@ export default function row1({username, leaderlist, homework, baseurl, movies}) 
                         <div className="relative  rounded-lg shadow bg-lightdark">
                             <div className="flex justify-between items-start p-5 rounded-t border-b dark:border-gray-600">
                                 <h3 className="text-xl font-semibold lg:text-2xl text-white">
-                                    Movies
+                                    Movies (Click VidCloud if it doesn't work)
                                 </h3>
                                 <button type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="defaultModal">
                                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>  
                                 </button>
                             </div>
                             <div className="p-6 space-y-6">
-                            {/* <iframe src={"https://fsapi.xyz/tmdb-movie/tt1877830"} width="600" height="500" frameBorder="0" allow="autoplay" allowFullScreen></iframe> */}
-                            <div id="indicators-carousel" className="relative" data-carousel="static">
-                                <div className="overflow-hidden relative h-48 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
-                                    {/* {movies.length > 1 && movies.map((movie, index) => {
-                                        <div className="hidden duration-700 ease-in-out" data-carousel-item="active">
-                                            <img src={"https://nypost.com/wp-content/uploads/sites/2/2022/02/the-batman.jpg?quality=80&strip=all"} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."/>
-                                        </div>
-                                    })} */}
-                                    {/* <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                                    <iframe src={"https://fsapi.xyz/tmdb-movie/tt1877830"} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" frameBorder="0" allow="autoplay" allowFullScreen></iframe>
-                                    </div> */}
-                                    <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                                        <img src={ur} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."/>
-                                    </div>
-                                    <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                                        <img src={ur} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."/>
-                                    </div>
-                                    <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                                        <img src={ur} className="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="..."/>
-                                    </div>
-                                </div>
-                                <div className="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
-                                    {/* {movies.length > 1 && movies.map((movie, index) => {
-                                    <button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label={"Slide"+(index+1)} data-carousel-slide-to={""+(index+1)+""}></button>
-                                })} */}
-                                    {/* <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                                    <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                                    <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                                    <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button> */}
-                                </div>
-                                <button type="button" className="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
-                                    <span className="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                        <svg className="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                                        <span className="hidden">Previous</span>
-                                    </span>
-                                </button>
-                                <button type="button" className="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
-                                    <span className="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                                        <svg className="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                                        <span className="hidden">Next</span>
-                                    </span>
-                                </button>
-                            </div>
+                            <iframe src={"https://fsapi.xyz/tmdb-movie/tt1877830"} width="600" height="500" frameBorder="0" allow="autoplay" allowFullScreen></iframe>
                             </div>
                             <div className="flex items-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
                                 {/* <button data-modal-toggle="defaultModal" type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">I accept</button>

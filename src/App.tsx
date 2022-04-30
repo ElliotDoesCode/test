@@ -49,7 +49,11 @@ export default function App() {
 
   const [movies, setmovies] = React.useState([]);
 
+<<<<<<< HEAD
   // const baseurl = "http://localhost:8081"
+=======
+//   const baseurl = "http://localhost:8081"
+>>>>>>> b1ab3148dd401ddcef8319a3e85490340ded916c
   const baseurl = "https://powerschoolapi.herokuapp.com"
   
   React.useLayoutEffect(() => { //asdasda
